@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/mystyle.css">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Do it with Strings</title>
+</head>
+<body>
+    <form action="#" th:action="@{/doItWithStrings}" method="post">
+        <div class="container">
+            <h1>Do it with Strings</h1>
+            <p>Implementiere zu den Button die verschiedensten Anwendungen von String.</p>
+            <div class="row">
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="string1">Erster String:</label>
+                        <input type="text" class="form-control" id="string1" th:field=="${viewData.string1}">
+                    </div>
+                    <div class="form-group">
+                        <label for="string2">Zweiter String:</label>
+                        <input type="text" class="form-control" id="string2" th:field=="${viewData.string2}">
+                    </div>
+                    <div class="form-group">
+                        <label for="string3">Dritter String:</label>
+                        <input type="text" class="form-control" id="string3" th:field=="${viewData.string3}">
+                    </div>
+                </div>
+            </div>
+            <p></p>
+            <div class="row">
+               <div class="col-12">
+                   <h4>Aufgaben:</h4>
+                   <button type="submit" class="btn btn-outline-primary m-1" name="showButton" value="aufgabe1">Aufgabe 1</button>
+                   <button type="submit" class="btn btn-outline-primary m-1" name="showButton" value="aufgabe2">Aufgabe 2</button>
+                   <button type="submit" class="btn btn-outline-primary m-1" name="showButton" value="aufgabe3">Aufgabe 3</button>
+                   <button type="submit" class="btn btn-outline-primary m-1" name="showButton" value="aufgabe4">Aufgabe 4</button>
+                   <button type="submit" class="btn btn-outline-primary m-1" name="showButton" value="aufgabe5">Aufgabe 5</button>
+                   <button type="submit" class="btn btn-outline-primary m-1" name="showButton" value="aufgabe6">Aufgabe 6</button>
+                   <button type="submit" class="btn btn-outline-primary m-1" name="showButton" value="aufgabe7">Aufgabe 7</button>
+                   <p></p>
+                   <div class="form-group">
+                       <label for="output">Output:</label>
+                       <textarea class="form-control" id="output" th:text="${viewData.result}" rows="15"></textarea>
+                   </div>
+               </div>
+            </div>
+            <button type="submit" class="btn btn-outline-primary m-1" name="showButton" value="resetView">Reset</button>
+        </div>
+    </form>
+</body>
+</html>
