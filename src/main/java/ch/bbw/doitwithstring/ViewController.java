@@ -11,13 +11,12 @@ import org.springframework.web.bind.annotation.PostMapping;
  *    Kontrolliert Zusammenspiel mit der View.
  *    Regiert auf Aktionen in der View.
  * @author Peter Rutschmann
- * @version 06.09.2021
+ * @version 06.12.2021
  */
 @Controller
 public class ViewController {
 
     ViewData viewData = new  ViewData();
-    DoItWithStrings generator = new DoItWithStrings();
 
     @GetMapping("/")
     public String redirect() {
@@ -40,8 +39,13 @@ public class ViewController {
         System.out.println("ViewController.aufgabe1: " + viewData.getResult());
 
         //Hier implementieren und mit viewData.setResult(..) Ergebnis zuweisen
+        // + "\n" macht immer eine neue Zeile
         //Beispiel:
-        viewData.setResult(viewData.getString1());
+        String ergebnis = viewData.getString1() + "\n"
+              + "a) Laenge: " /*hier ergänzen*/ + "\n"
+              + "b) Ist Gerade Anzahl: " /*hier ergänzen*/ + "\n"
+              + "c) Erster Buchstabe: " /*hier ergänzen*/ + "Letzter Buchstabe: " /*hier ergänzen*/ + "\n";
+        viewData.setResult(ergebnis);
 
         model.addAttribute("viewData", viewData);
         return "DoItWithStringsForm";
