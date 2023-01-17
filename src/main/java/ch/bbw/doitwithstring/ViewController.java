@@ -6,6 +6,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.io.Console;
+import java.util.Scanner;
+
 /**
  * ViewController
  *    Kontrolliert Zusammenspiel mit der View.
@@ -41,10 +44,13 @@ public class ViewController {
         //Hier implementieren und mit viewData.setResult(..) Ergebnis zuweisen
         // + "\n" macht immer eine neue Zeile
         //Beispiel:
+        String gerade = "";
+        if(viewData.getString1().length() %2 == 0){gerade = "Ja";}else{ gerade = "Nein";}
+
         String ergebnis = viewData.getString1() + "\n"
-              + "a) Laenge: " /*hier ergänzen*/ + "\n"
-              + "b) Ist Gerade Anzahl: " /*hier ergänzen*/ + "\n"
-              + "c) Erster Buchstabe: " /*hier ergänzen*/ + "Letzter Buchstabe: " /*hier ergänzen*/ + "\n";
+              + "a) Laenge: " + viewData.getString1().length() + "\n"
+              + "b) Ist Gerade Anzahl: " + gerade + "\n"
+              + "c) Erster Buchstabe: " + viewData.getString1().charAt(0) + " Letzter Buchstabe: " + viewData.getString1().charAt(viewData.getString1().length()-1) + "\n";
         viewData.setResult(ergebnis);
 
         model.addAttribute("viewData", viewData);
@@ -58,6 +64,8 @@ public class ViewController {
 
         //Hier implementieren und mit viewData.setResult(..) Ergebnis zuweisen
         // viewData.setResult(..
+        String ergebnis = viewData.getString1() + " / " + viewData.getString2() + "\n"
+                + "";
 
         model.addAttribute("viewData", viewData);
         return "DoItWithStringsForm";
